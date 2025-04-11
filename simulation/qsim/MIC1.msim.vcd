@@ -1,0 +1,58 @@
+$comment
+	File created using the following command:
+		vcd file MIC1.msim.vcd -direction
+$end
+$date
+	Thu Apr 10 20:55:49 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module MIC1_vlg_vec_tst $end
+$var reg 1 ! I0 $end
+$var reg 1 " I1 $end
+$var wire 1 # O0 $end
+$var wire 1 $ O1 $end
+$var wire 1 % O2 $end
+$var wire 1 & O3 $end
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - I1~combout $end
+$var wire 1 . I0~combout $end
+$var wire 1 / inst7~0_combout $end
+$var wire 1 0 inst7~1_combout $end
+$var wire 1 1 inst7~2_combout $end
+$var wire 1 2 inst5~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+x"
+x#
+x$
+x%
+x&
+0'
+1(
+x)
+1*
+1+
+1,
+x-
+x.
+x/
+x0
+x1
+x2
+$end
+#1000000
