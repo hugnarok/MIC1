@@ -1,15 +1,14 @@
 |MIC1
-O3 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
-I0 => inst8.IN0
-I0 => inst1.IN0
-I0 => inst6.IN0
-I0 => inst3.IN0
-I1 => inst8.IN1
-I1 => inst7.IN1
-I1 => inst2.IN0
-I1 => inst.IN0
-O2 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
-O1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
-O0 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+O <= inst.DB_MAX_OUTPUT_PORT_TYPE
+EN => inst8.IN0
+EN => inst3.IN0
+A => inst4.IN0
+A => inst2.IN0
+B => inst4.IN1
+B => inst2.IN1
+CIN => inst.IN1
+CIN => inst3.IN2
+CIN => inst2.IN2
+COUT <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 
 

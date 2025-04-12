@@ -32,7 +32,7 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("MIC1_vlg_vec_tst|I0")
+SIGNAL("MIC1_vlg_vec_tst|A")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -42,7 +42,7 @@ SIGNAL("MIC1_vlg_vec_tst|I0")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|I1")
+SIGNAL("MIC1_vlg_vec_tst|B")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -52,7 +52,7 @@ SIGNAL("MIC1_vlg_vec_tst|I1")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|O0")
+SIGNAL("MIC1_vlg_vec_tst|CIN")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -62,7 +62,7 @@ SIGNAL("MIC1_vlg_vec_tst|O0")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|O1")
+SIGNAL("MIC1_vlg_vec_tst|EN")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -72,7 +72,7 @@ SIGNAL("MIC1_vlg_vec_tst|O1")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|O2")
+SIGNAL("MIC1_vlg_vec_tst|COUT")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -82,7 +82,17 @@ SIGNAL("MIC1_vlg_vec_tst|O2")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|O3")
+SIGNAL("MIC1_vlg_vec_tst|O")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("MIC1_vlg_vec_tst|sampler")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -152,7 +162,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|devoe")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|I1~combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|A~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -162,7 +172,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|I1~combout")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|I0~combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|B~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -172,7 +182,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|I0~combout")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|inst7~0_combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|CIN~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -182,7 +192,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|inst7~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|inst7~1_combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|EN~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -192,7 +202,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|inst7~1_combout")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|inst7~2_combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|inst~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -202,7 +212,7 @@ SIGNAL("MIC1_vlg_vec_tst|i1|inst7~2_combout")
 	PARENT = "";
 }
 
-SIGNAL("MIC1_vlg_vec_tst|i1|inst5~combout")
+SIGNAL("MIC1_vlg_vec_tst|i1|inst6~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -212,57 +222,92 @@ SIGNAL("MIC1_vlg_vec_tst|i1|inst5~combout")
 	PARENT = "";
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|I0")
+TRANSITION_LIST("MIC1_vlg_vec_tst|A")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|I1")
+TRANSITION_LIST("MIC1_vlg_vec_tst|B")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 250.0;
+		LEVEL 1 FOR 250.0;
+		LEVEL 0 FOR 250.0;
+		LEVEL 1 FOR 250.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|O0")
+TRANSITION_LIST("MIC1_vlg_vec_tst|CIN")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|O1")
+TRANSITION_LIST("MIC1_vlg_vec_tst|EN")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|O2")
+TRANSITION_LIST("MIC1_vlg_vec_tst|COUT")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 375.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|O3")
+TRANSITION_LIST("MIC1_vlg_vec_tst|O")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 625.0;
+		LEVEL 1 FOR 125.0;
+	}
+}
+
+TRANSITION_LIST("MIC1_vlg_vec_tst|sampler")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
 	}
 }
 
@@ -320,63 +365,82 @@ TRANSITION_LIST("MIC1_vlg_vec_tst|i1|devoe")
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|I1~combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|A~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|I0~combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|B~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 250.0;
+		LEVEL 1 FOR 250.0;
+		LEVEL 0 FOR 250.0;
+		LEVEL 1 FOR 250.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst7~0_combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|CIN~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst7~1_combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|EN~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst7~2_combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 625.0;
+		LEVEL 1 FOR 125.0;
 	}
 }
 
-TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst5~combout")
+TRANSITION_LIST("MIC1_vlg_vec_tst|i1|inst6~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL 0 FOR 375.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
+		LEVEL 0 FOR 125.0;
+		LEVEL 1 FOR 125.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|I0";
+	CHANNEL = "MIC1_vlg_vec_tst|A";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -385,7 +449,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|I1";
+	CHANNEL = "MIC1_vlg_vec_tst|B";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -394,7 +458,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|O0";
+	CHANNEL = "MIC1_vlg_vec_tst|CIN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -403,7 +467,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|O1";
+	CHANNEL = "MIC1_vlg_vec_tst|EN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -412,7 +476,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|O2";
+	CHANNEL = "MIC1_vlg_vec_tst|COUT";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
@@ -421,7 +485,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|O3";
+	CHANNEL = "MIC1_vlg_vec_tst|O";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
@@ -430,7 +494,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|gnd";
+	CHANNEL = "MIC1_vlg_vec_tst|sampler";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
@@ -439,7 +503,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|vcc";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|gnd";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
@@ -448,7 +512,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|unknown";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|vcc";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
@@ -457,7 +521,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|devclrn";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|unknown";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
@@ -466,7 +530,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|devpor";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|devclrn";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;
@@ -475,7 +539,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|devoe";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|devpor";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 11;
@@ -484,7 +548,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|I1~combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|devoe";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
@@ -493,7 +557,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|I0~combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|A~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -502,7 +566,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|inst7~0_combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|B~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
@@ -511,7 +575,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|inst7~1_combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|CIN~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 15;
@@ -520,7 +584,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|inst7~2_combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|EN~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 16;
@@ -529,10 +593,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MIC1_vlg_vec_tst|i1|inst5~combout";
+	CHANNEL = "MIC1_vlg_vec_tst|i1|inst~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 17;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MIC1_vlg_vec_tst|i1|inst6~combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 18;
 	TREE_LEVEL = 0;
 }
 ;
