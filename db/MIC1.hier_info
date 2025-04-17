@@ -1,14 +1,20 @@
 |MIC1
-O <= inst.DB_MAX_OUTPUT_PORT_TYPE
-EN => inst8.IN0
-EN => inst3.IN0
+OUTPUT <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+INVA => inst7.IN0
 A => inst4.IN0
-A => inst2.IN0
-B => inst4.IN1
-B => inst2.IN1
-CIN => inst.IN1
-CIN => inst3.IN2
-CIN => inst2.IN2
-COUT <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+ENA => inst4.IN1
+B => inst5.IN0
+ENB => inst5.IN1
+F0 => inst13.IN0
+F0 => inst10.IN0
+F0 => inst12.IN0
+F0 => inst15.IN0
+F1 => inst14.IN0
+F1 => inst16.IN0
+F1 => inst12.IN1
+F1 => inst11.IN1
+CIN => inst19.IN0
+CIN => inst20.IN0
+COUT <= inst22.DB_MAX_OUTPUT_PORT_TYPE
 
 
