@@ -37,7 +37,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 544 32 720 48)
+	(rect 584 32 760 48)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "O[31..0]" (rect 90 0 130 12)(font "Arial" ))
 	(pt 0 8)
@@ -118,5 +118,10 @@ applicable agreement for further details.
 	(text "O[7..0]" (rect 314 72 348 84)(font "Arial" ))
 	(pt 304 88)
 	(pt 336 88)
+	(bus)
+)
+(connector
+	(pt 584 40)
+	(pt 552 40)
 	(bus)
 )
